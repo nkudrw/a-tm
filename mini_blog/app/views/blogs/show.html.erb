@@ -1,0 +1,13 @@
+
+      <p ><strong>内容：<%= @blog.body %></strong></p>
+      <p ><strong>いいね：<%= @blog.like %></strong></p>
+      <p >
+        <strong>投稿日時:</strong>
+        <%= @blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
+      </p>
+    <p>コメント一覧</p>
+      <%= render partial: 'replies/index', locals: { replies: @replies, blog: @blog } %>
+    <%= render partial: 'replies/form', locals: { reply: @reply, blog: @blog } %>
+    <%= link_to '戻る', blogs_path %>
+  </div>
+</div>

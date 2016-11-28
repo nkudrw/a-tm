@@ -1,0 +1,13 @@
+<h1>Naokiのブログ</h2>
+<%= render 'form' %>
+<% @blogs.each do |blog| %>
+  <p><%= blog.id %>：
+  <%= link_to blog_path(blog) do %>
+      <%= blog.body %></p>
+  <% end %>
+  <strong>投稿日時:</strong>
+  <%= blog.created_at.strftime("%y/%m/%d %p %l:%M") %>
+ <%= render partial: 'likes/like', locals: { like: @like, blog: blog } %>
+  <p>コメント数：<%= blog.replies.count %></p>
+  <br>
+<% end %>

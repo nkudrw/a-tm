@@ -1,0 +1,11 @@
+<table><tr>
+    <td>
+<%= button_to blog_likes_path(blog), id: "like-button" do %>
+    <span>いいね</span>
+  <% end %>
+  </td>
+  <td>
+    <p>：<%= blog.like %><p>
+  </td>
+  </tr>
+  <table>
